@@ -2825,7 +2825,7 @@ const run = async () => {
     });
     console.log(map);
     map.forEach((key, val) => {
-        data = data.replace(val, key);
+        data = data.replace(key, val);
     });
     fs.writeFileSync(path.resolve(outputFile), data);
     core.setOutput('template-output-path', outputFile);
