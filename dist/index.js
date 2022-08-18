@@ -2816,6 +2816,8 @@ const run = async () => {
     let map = new Map();
     let regex = new RegExp(mappingFormat);
     let lines = replacements.split('\n');
+    console.log(replacements);
+    console.log(lines);
     lines.forEach((replacement) => {
         let match = regex.exec(replacement);
         if (match && match.length == 3) {
