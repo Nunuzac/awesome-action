@@ -19,13 +19,10 @@ const run = async () => {
             core.warning(`Wrong format of ad-hoc replacement "${replacement}"`);
         }
     });
+    let out = data;
     map.forEach((key, val) => {
-        console.log(`${key} => ${val}`);
-        console.log(data.replace(key, val));
-        console.log('********');
-        console.log(data.replace(val, key));
-        console.log('********');
-        data = data.replace(key, val);
+        out = out.replace(val, key);
+        console.log(out);
     });
     fs.writeFileSync(path.resolve(outputFile), data);
     core.setOutput('template-output-path', outputFile);
