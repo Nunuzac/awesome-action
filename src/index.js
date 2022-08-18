@@ -21,10 +21,9 @@ const run = async () => {
     });
     let out = data;
     map.forEach((key, val) => {
-        out = out.replace(val, key);
-        console.log(out);
+        out = out.replaceAll(val, key);
     });
-    fs.writeFileSync(path.resolve(outputFile), data);
+    fs.writeFileSync(path.resolve(outputFile), out);
     core.setOutput('template-output-path', outputFile);
 }
 
