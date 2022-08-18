@@ -2815,10 +2815,7 @@ const run = async () => {
     let data = fs.readFileSync(path.resolve(inputFile), 'utf-8');
     let map = new Map();
     let regex = new RegExp(mappingFormat);
-    let lines = replacements.split('\n');
-    console.log(replacements);
-    console.log(lines);
-    lines.forEach((replacement) => {
+    replacements.split('\n').forEach((replacement) => {
         let match = regex.exec(replacement);
         if (match && match.length == 3) {
             map.set(`%${match[1]}`, match[2]);
@@ -2826,6 +2823,7 @@ const run = async () => {
             core.warning(`Wrong format of ad-hoc replacement "${replacement}"`);
         }
     });
+    console.log(map);
     map.forEach((key, val) => {
         data = data.replace(val, key);
     });
