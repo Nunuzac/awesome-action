@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 IFS=$'\n'
 lines=($REPL)
 tmp=$(cat $1)
