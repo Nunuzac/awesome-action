@@ -9,5 +9,4 @@ do
     val=$(echo $l | sed -e "s/.\+=\"\(.\+\)\"/\1/g")
     tmp=$(sed -e "s~%$key~$val~g" <<< $tmp)
 done
-echo $REPL
-exit 1
+echo $tmp
