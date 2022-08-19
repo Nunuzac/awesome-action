@@ -22,6 +22,7 @@ inputs:
 runs:
   using: composite
   steps:
+    - uses: actions/checkout@v3
     - name: Fix Slack notification template
       if: ${{ inputs.payload-file-path != '' }}
       id: fix_template
